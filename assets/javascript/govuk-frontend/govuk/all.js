@@ -2261,7 +2261,9 @@ RadiosARIABoth.prototype.syncAllConditionalReveals = function () {
 };
 
 RadiosARIABoth.prototype.syncConditionalRevealWithInputState = function ($input) {
-  var $target = document.querySelector('#' + this.$module.getAttribute('aria-controls'));
+  var $target = $input.hasAttribute('data-reveals')
+                  ? document.querySelector('#' + this.$module.getAttribute('aria-controls'))
+                  : undefined;
 
   if ($target && $target.classList.contains('govuk-radios__conditional')) {
     var inputIsChecked = $input.checked;
