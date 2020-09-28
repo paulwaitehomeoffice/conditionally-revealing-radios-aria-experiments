@@ -106,13 +106,12 @@
                     Conceal
                   </label>
                 </div>
-
               </div>
             </fieldset>
           </div>
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-fieldset-only"  data-aria-controls="conditional-fieldset-only">
+            <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-fieldset-only" data-aria-controls="conditional-fieldset-only">
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 <code>aria-controls</code> on fieldset only
@@ -137,14 +136,12 @@
                     Conceal
                   </label>
                 </div>
-
               </div>
-
             </fieldset>
           </div>
 
           <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-both"  data-aria-controls="conditional-both">
+            <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-both" data-aria-controls="conditional-both">
 
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                 <code>aria-controls</code> on both fieldset and radio button
@@ -169,9 +166,37 @@
                     Conceal
                   </label>
                 </div>
-
               </div>
+            </fieldset>
+          </div>
 
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-both-all-radios" data-aria-controls="conditional-both-all-radios">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <code>aria-controls</code> on both fieldset and all radio buttons
+              </legend>
+
+              <div class="govuk-radios govuk-radios--conditional">
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="both-all-radios" name="both-all-radios" type="radio" value="reveal" data-reveals>
+                  <label class="govuk-label govuk-radios__label" for="both-all-radios">
+                    Reveal
+                  </label>
+                </div>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-both-all-radios">
+                  <p class="govuk-body">Now you see me!</p>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="both-all-radios-2" name="both-all-radios" type="radio" value="conceal">
+                  <label class="govuk-label govuk-radios__label" for="both-all-radios-2">
+                    Conceal
+                  </label>
+                </div>
+              </div>
             </fieldset>
           </div>
 
