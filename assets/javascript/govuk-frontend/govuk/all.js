@@ -2618,20 +2618,23 @@ RadiosARIABothAllRadiosDynamicAlt.prototype.syncAllConditionalReveals = function
     $target.classList.toggle('govuk-radios__conditional--hidden', !shouldExpand);
   }
 
-  nodeListForEach(this.$inputs, this.setExpanded.bind(this));
+  nodeListForEach(this.$inputs, this.removeAriaExpandeds.bind(this));
+  nodeListForEach(this.$inputs, this.reAddSomeAriaExpandeds.bind(this));
 };
 
-RadiosARIABothAllRadiosDynamicAlt.prototype.setExpanded = function ($input) {
+RadiosARIABothAllRadiosDynamicAlt.prototype.removeAriaExpandeds = function ($input) {
+  $input.removeAttribute('aria-expanded');
+};
+
+RadiosARIABothAllRadiosDynamicAlt.prototype.reAddSomeAriaExpandeds = function ($input) {
   var isExpanded = this.$module.getAttribute('aria-expanded') === 'true';
 
   if (
-        $input.hasAttribute('data-reveals') && isExpanded
-    || !$input.hasAttribute('data-reveals') && !isExpanded
+        $input.hasAttribute('data-reveals') && !isExpanded
+    || !$input.hasAttribute('data-reveals') && isExpanded
   ) {
-    $input.removeAttribute('aria-expanded');
+    $input.setAttribute('aria-expanded', isExpanded);
   }
-
-  $input.setAttribute('aria-expanded', isExpanded);
 };
 
 RadiosARIABothAllRadiosDynamicAlt.prototype.handleClick = function (event) {
