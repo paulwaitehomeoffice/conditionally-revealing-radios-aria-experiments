@@ -2469,6 +2469,94 @@ RadiosARIABothAllRadiosExpanded.prototype.handleClick = function (event) {
   }.bind(this));
 };
 
+function RadiosARIABothAllRadiosDynamic ($module) {
+  this.$module = $module;
+  this.$inputs = $module.querySelectorAll('input[type="radio"]');
+}
+
+RadiosARIABothAllRadiosDynamic.prototype.init = function () {
+  var $module = this.$module;
+  var $inputs = this.$inputs;
+
+  // Promote the fieldset's data-aria-controls attribute to a aria-controls attribute
+  // so that the relationship is exposed in the AOM
+  var target = $module.getAttribute('data-aria-controls')
+
+  // Skip fieldsets without data-aria-controls attributes, or where the
+  // target element does not exist.
+  if (!target || !$module.querySelector('#' + target)) {
+    return
+  }
+
+  $module.setAttribute('aria-controls', target)
+  $module.removeAttribute('data-aria-controls')
+
+  // When the page is restored after navigating 'back' in some browsers the
+  // state of form controls is not restored until *after* the DOMContentLoaded
+  // event is fired, so we need to sync after the pageshow event in browsers
+  // that support it.
+  if ('onpageshow' in window) {
+    window.addEventListener('pageshow', this.syncAllConditionalReveals.bind(this));
+  } else {
+    window.addEventListener('DOMContentLoaded', this.syncAllConditionalReveals.bind(this));
+  }
+
+  // Although we've set up handlers to sync state on the pageshow or
+  // DOMContentLoaded event, init could be called after those events have fired,
+  // for example if they are added to the page dynamically, so sync now too.
+  this.syncAllConditionalReveals();
+
+  // Handle events
+  $module.addEventListener('click', this.handleClick.bind(this));
+};
+
+RadiosARIABothAllRadiosDynamic.prototype.syncAllConditionalReveals = function () {
+  var $target = document.querySelector('#' + this.$module.getAttribute('aria-controls'));
+
+  if ($target && $target.classList.contains('govuk-radios__conditional')) {
+    var shouldExpand = false;
+
+    for (var i=0; i<this.$inputs.length; i++) {
+      var $input = this.$inputs[i];
+
+      if ($input.checked && $input.hasAttribute('data-reveals')) {
+        shouldExpand = true;
+        break;
+      }
+    }
+
+    this.$module.setAttribute('aria-expanded', shouldExpand)
+    $target.classList.toggle('govuk-radios__conditional--hidden', !shouldExpand);
+  }
+
+  nodeListForEach(this.$inputs, this.setExpanded.bind(this));
+};
+
+RadiosARIABothAllRadiosDynamic.prototype.setExpanded = function ($input) {
+  var isExpanded = this.$module.getAttribute('aria-expanded') === 'true';
+
+  if (
+        $input.hasAttribute('data-reveals') && !isExpanded
+    || !$input.hasAttribute('data-reveals') && isExpanded
+  ) {
+    $input.setAttribute('aria-expanded', isExpanded);
+  }
+  else {
+    $input.removeAttribute('aria-expanded');
+  }
+};
+
+RadiosARIABothAllRadiosDynamic.prototype.handleClick = function (event) {
+  var $clickedInput = event.target;
+
+  // Ignore clicks on things that aren't radio buttons
+  if ($clickedInput.type !== 'radio') {
+    return
+  }
+
+  this.syncAllConditionalReveals();
+};
+
 (function(undefined) {
 
     // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-library/master/polyfills/Element/prototype/nextElementSibling/detect.js
@@ -2847,6 +2935,11 @@ function initAll (options) {
   var $radiosARIABothAllRadiosExpanded = scope.querySelectorAll('[data-module="govuk-radios-ARIA-both-all-radios-expanded"]');
   nodeListForEach($radiosARIABothAllRadiosExpanded, function ($radioARIABothAllRadiosExpanded) {
     new RadiosARIABothAllRadiosExpanded($radioARIABothAllRadiosExpanded).init();
+  });
+
+  var $radiosARIABothAllRadiosDynamic = scope.querySelectorAll('[data-module="govuk-radios-ARIA-both-all-radios-dynamic"]');
+  nodeListForEach($radiosARIABothAllRadiosDynamic, function ($radioARIABothAllRadiosDynamic) {
+    new RadiosARIABothAllRadiosDynamic($radioARIABothAllRadiosDynamic).init();
   });
 
 
