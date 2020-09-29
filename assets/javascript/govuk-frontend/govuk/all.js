@@ -2535,14 +2535,15 @@ RadiosARIABothAllRadiosDynamic.prototype.syncAllConditionalReveals = function ()
 RadiosARIABothAllRadiosDynamic.prototype.setExpanded = function ($input) {
   var isExpanded = this.$module.getAttribute('aria-expanded') === 'true';
 
+  $input.setAttribute('aria-expanded', isExpanded);
+
   if (
-        $input.hasAttribute('data-reveals') && !isExpanded
-    || !$input.hasAttribute('data-reveals') && isExpanded
+        $input.hasAttribute('data-reveals') && isExpanded
+    || !$input.hasAttribute('data-reveals') && !isExpanded
   ) {
-    $input.setAttribute('aria-expanded', isExpanded);
-  }
-  else {
-    $input.removeAttribute('aria-expanded');
+    window.setTimeout(function () {
+      $input.removeAttribute('aria-expanded');
+    }, 50);
   }
 };
 
