@@ -2385,6 +2385,90 @@ RadiosARIABothAllRadios.prototype.handleClick = function (event) {
   }.bind(this));
 };
 
+function RadiosARIABothAllRadiosExpanded ($module) {
+  this.$module = $module;
+  this.$inputs = $module.querySelectorAll('input[type="radio"]');
+}
+
+RadiosARIABothAllRadiosExpanded.prototype.init = function () {
+  var $module = this.$module;
+  var $inputs = this.$inputs;
+
+  // Promote the fieldset's data-aria-controls attribute to a aria-controls attribute
+  // so that the relationship is exposed in the AOM
+  var target = $module.getAttribute('data-aria-controls')
+
+  // Skip fieldsets without data-aria-controls attributes, or where the
+  // target element does not exist.
+  if (!target || !$module.querySelector('#' + target)) {
+    return
+  }
+
+  $module.setAttribute('aria-controls', target)
+  $module.removeAttribute('data-aria-controls')
+
+  // When the page is restored after navigating 'back' in some browsers the
+  // state of form controls is not restored until *after* the DOMContentLoaded
+  // event is fired, so we need to sync after the pageshow event in browsers
+  // that support it.
+  if ('onpageshow' in window) {
+    window.addEventListener('pageshow', this.syncAllConditionalReveals.bind(this));
+  } else {
+    window.addEventListener('DOMContentLoaded', this.syncAllConditionalReveals.bind(this));
+  }
+
+  // Although we've set up handlers to sync state on the pageshow or
+  // DOMContentLoaded event, init could be called after those events have fired,
+  // for example if they are added to the page dynamically, so sync now too.
+  this.syncAllConditionalReveals();
+
+  // Handle events
+  $module.addEventListener('click', this.handleClick.bind(this));
+};
+
+RadiosARIABothAllRadiosExpanded.prototype.syncAllConditionalReveals = function () {
+  nodeListForEach(this.$inputs, this.syncConditionalRevealWithInputState.bind(this));
+};
+
+RadiosARIABothAllRadiosExpanded.prototype.syncConditionalRevealWithInputState = function ($input) {
+  var $target = document.querySelector('#' + this.$module.getAttribute('aria-controls'));
+
+  if ($target && $target.classList.contains('govuk-radios__conditional')) {
+    var inputIsChecked = $input.checked;
+
+    $input.setAttribute('aria-expanded', inputIsChecked);
+    this.$module.setAttribute('aria-expanded', inputIsChecked)
+    $target.classList.toggle('govuk-radios__conditional--hidden', !inputIsChecked);
+
+    // Set aria-expanded for all other inputs too
+    nodeListForEach(this.$inputs, function ($otherInput) {
+      $otherInput.setAttribute('aria-expanded', inputIsChecked);
+    });
+  }
+};
+
+RadiosARIABothAllRadiosExpanded.prototype.handleClick = function (event) {
+  var $clickedInput = event.target;
+
+  // Ignore clicks on things that aren't radio buttons
+  if ($clickedInput.type !== 'radio') {
+    return
+  }
+
+  // We only need to consider radios with conditional reveals, which will have
+  // data-reveals attributes.
+  var $allInputs = document.querySelectorAll('input[type="radio"][data-reveals]')
+
+  nodeListForEach($allInputs, function ($input) {
+    var hasSameFormOwner = ($input.form === $clickedInput.form);
+    var hasSameName = ($input.name === $clickedInput.name);
+
+    if (hasSameName && hasSameFormOwner) {
+      this.syncConditionalRevealWithInputState($input);
+    }
+  }.bind(this));
+};
+
 (function(undefined) {
 
     // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-library/master/polyfills/Element/prototype/nextElementSibling/detect.js
@@ -2758,6 +2842,11 @@ function initAll (options) {
   var $radiosARIABothAllRadios = scope.querySelectorAll('[data-module="govuk-radios-ARIA-both-all-radios"]');
   nodeListForEach($radiosARIABothAllRadios, function ($radioARIABothAllRadios) {
     new RadiosARIABothAllRadios($radioARIABothAllRadios).init();
+  });
+
+  var $radiosARIABothAllRadiosExpanded = scope.querySelectorAll('[data-module="govuk-radios-ARIA-both-all-radios-expanded"]');
+  nodeListForEach($radiosARIABothAllRadiosExpanded, function ($radioARIABothAllRadiosExpanded) {
+    new RadiosARIABothAllRadiosExpanded($radioARIABothAllRadiosExpanded).init();
   });
 
 
