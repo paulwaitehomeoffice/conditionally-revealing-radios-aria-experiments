@@ -2543,7 +2543,7 @@ RadiosARIABothAllRadiosDynamic.prototype.setExpanded = function ($input) {
   ) {
     window.setTimeout(function () {
       $input.removeAttribute('aria-expanded');
-    }, 500);
+    }, 1000);
   }
 };
 
