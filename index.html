@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-    Test: Conditional reveal ARIA test -
-    Global Entry - GOV.UK
+    Conditional reveal ARIA experiments
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
@@ -62,7 +61,7 @@
 
     <div class="govuk-header__content">
       <a href="#" class="govuk-header__link govuk-header__link--service-name">
-        Conditional reveal ARIA test
+        Conditional reveal ARIA experiments
       </a>
     </div>
 
@@ -74,37 +73,72 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-full-width">
 
+        <h1 class="govuk-heading-l">Conditional reveal ARIA experiments</h1>
 
+        <p class="govuk-body"><a href="variations.html" class="govuk-link">Variations on the GOV.UK Design System conditional reveal</a></p>
 
-        <h1 class="govuk-heading-l">Conditional reveal ARIA test</h1>
-
-        <p class="govuk-body"><a href="examples.html" class="govuk-link">Try the tests</a></p>
 
         <h2 class="govuk-heading-m">Screen reader videos</h2>
 
-        <h2 class="govuk-heading-s">Voiceover, iOS 13.7</h2>
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <th scope="col" class="govuk-table__header">Screen reader</th>
+            <th scope="col" class="govuk-table__header">
+              Variation A (original)
+              <span class="govuk-!-font-size-16 govuk-!-display-block govuk-!-font-weight-regular">(ARIA on expanding radio buttons only)</span>
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Variation B
+              <span class="govuk-!-font-size-16 govuk-!-display-block govuk-!-font-weight-regular">(ARIA on fieldset only)</span>
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Variation D
+              <span class="govuk-!-font-size-16 govuk-!-display-block govuk-!-font-weight-regular">(ARIA on fieldset and all radio buttons)</span>
+            </th>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Voiceover, iOS 13.7</td>
+              <td class="govuk-table__cell">
+                <a href="voiceover-ios-13-original.mp4" class="govuk-link">Video</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="voiceover-ios-13-test-2.mp4" class="govuk-link">Video</a>
+              </td>
+              <td class="govuk-table__cell">
+                <ul class="govuk-list govuk-list--bullet">
+                  <li><a href="voiceover-ios-13-test-4.mp4" class="govuk-link">Video</a></li>
+                  <li><a href="voiceover-ios-13-test-4-a.mp4" class="govuk-link">Video, select non-expanding radio first</a></li>
+                </ul>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Voiceover, macOS 10.14.6</td>
+              <td class="govuk-table__cell">
+                <ul class="govuk-list govuk-list--bullet">
+                  <li><a href="voiceover-macos-10-14-original.mp4" class="govuk-link">Video, tabbing</a></li>
+                  <li><a href="voiceover-macos-10-14-original-a.mp4" class="govuk-link">Video, tabbing, select non-expanding radio first</a></li>
+                  <li><a href="voiceover-macos-10-14-original-b.mp4" class="govuk-link">Video, web rotor</a></li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell">
+                <ul class="govuk-list govuk-list--bullet">
+                  <li><a href="voiceover-macos-10-14-test-2.mp4" class="govuk-link">Video, tabbing</a></li>
+                  <li><a href="voiceover-macos-10-14-test-2-a.mp4" class="govuk-link">Video, web rotor</a></li>
+                </ul>
+              </td>
+              <td class="govuk-table__cell">
+                <ul class="govuk-list govuk-list--bullet">
+                  <li><a href="voiceover-macos-10-14-test-4.mp4" class="govuk-link">Video, tabbing</a></li>
+                  <li><a href="voiceover-macos-10-14-test-4-a.mp4" class="govuk-link">Video, web rotor</a></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="voiceover-ios-13-original.mp4" class="govuk-link">ARIA on radio button only (original) (test 1)</a></li>
-          <li><a href="voiceover-ios-13-test-2.mp4" class="govuk-link">ARIA on fieldset only (test 2)</a></li>
-          <li><a href="voiceover-ios-13-test-4.mp4" class="govuk-link">ARIA on fieldset and all radio buttons (test 4)</a></li>
-          <li><a href="voiceover-ios-13-test-4-a.mp4" class="govuk-link">ARIA on fieldset and all radio buttons (test 4), select collapsed radio first</a></li>
-        </ul>
-
-
-        <h2 class="govuk-heading-s">Voiceover, macOS 10.14.6</h2>
-
-        <ul class="govuk-list govuk-list--bullet">
-          <li><a href="voiceover-macos-10-14-original.mp4" class="govuk-link">ARIA on radio button only (original) (test 1), tabbing</a></li>
-          <li><a href="voiceover-macos-10-14-original-b.mp4" class="govuk-link">ARIA on radio button only (original) (test 1), web rotor</a></li>
-          <li><a href="voiceover-macos-10-14-original-a.mp4" class="govuk-link">ARIA on radio button only (original) (test 1), tabbing to and selecting collapsed radio</a>
-          <li><a href="voiceover-macos-10-14-test-2.mp4" class="govuk-link">ARIA on fieldset only (test 2), tabbing</a></li>
-          <li><a href="voiceover-macos-10-14-test-2-a.mp4" class="govuk-link">ARIA on fieldset only (test 2), web rotor</a></li>
-          <li><a href="voiceover-macos-10-14-test-4.mp4" class="govuk-link">ARIA on fieldset and all radio buttons (test 4), tabbing</a></li>
-          <li><a href="voiceover-macos-10-14-test-4-a.mp4" class="govuk-link">ARIA on fieldset and all radio buttons (test 4), web rotor</a></li>
-        </ul>
       </div>
     </div>
 

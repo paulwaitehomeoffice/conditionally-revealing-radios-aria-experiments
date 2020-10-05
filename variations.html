@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-    Test: Conditional reveal ARIA test -
-    Global Entry - GOV.UK
+    Variations on the GOV.UK Design System conditional reveal - Conditional reveal ARIA experiments
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
@@ -62,7 +61,7 @@
 
     <div class="govuk-header__content">
       <a href="index.html" class="govuk-header__link govuk-header__link--service-name">
-        Conditional reveal ARIA test
+        Conditional reveal ARIA experiments
       </a>
     </div>
 
@@ -78,15 +77,17 @@
 
 
 
-        <h1 class="govuk-heading-l">Conditional reveal ARIA test</h1>
+        <h1 class="govuk-heading-l">Variations on the GOV.UK Design System conditional reveal</h1>
 
         <form method="POST" novalidate>
 
+          <button class="govuk-button govuk-button--secondary">Focusable before fieldset</button>
+
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                1. ARIA on radio button only (original)
-              </legend>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Varation A (original)</legend>
+
+              <p class="govuk-hint">ARIA on expanding radio buttons only</p>
 
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
@@ -115,9 +116,9 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-fieldset-only" data-aria-controls="conditional-fieldset-only">
 
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                2. ARIA  on fieldset only
-              </legend>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Variation B</legend>
+
+              <p class="govuk-hint">ARIA on fieldset only</p>
 
               <div class="govuk-radios govuk-radios--conditional">
 
@@ -147,9 +148,9 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-both" data-aria-controls="conditional-both">
 
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                3. ARIA on fieldset and radio button
-              </legend>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Variation C</legend>
+
+              <p class="govuk-hint">ARIA on fieldset and expanding radio buttons</p>
 
               <div class="govuk-radios govuk-radios--conditional">
 
@@ -179,9 +180,9 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-both-all-radios" data-aria-controls="conditional-both-all-radios">
 
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                4. ARIA on fieldset and all radio buttons
-              </legend>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Variation D</legend>
+
+              <p class="govuk-hint">ARIA on fieldset and all radio buttons</p>
 
               <div class="govuk-radios govuk-radios--conditional">
 
@@ -211,9 +212,9 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-both-all-radios-expanded" data-aria-controls="conditional-both-all-radios-expanded">
 
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                5. ARIA on fieldset, aria-expanded on all radio buttons
-              </legend>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Variation E</legend>
+
+              <p class="govuk-hint">ARIA on fieldset, aria-expanded on all radio buttons</p>
 
               <div class="govuk-radios govuk-radios--conditional">
 
@@ -243,9 +244,9 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-both-all-radios-dynamic" data-aria-controls="conditional-both-all-radios-dynamic">
 
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                6. ARIA on fieldset, aria-expanded dynamic on all radio buttons
-              </legend>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Variation F</legend>
+
+              <p class="govuk-hint">ARIA on fieldset, aria-expanded dynamic on all radio buttons</p>
 
               <div class="govuk-radios govuk-radios--conditional">
 
@@ -275,9 +276,9 @@
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" data-module="govuk-radios-ARIA-both-all-radios-dynamic-alt" data-aria-controls="conditional-both-all-radios-dynamic-alt">
 
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                7. ARIA on fieldset, aria-expanded dynamic on all radio buttons differently
-              </legend>
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Variation G</legend>
+
+              <p class="govuk-hint">ARIA on fieldset, aria-expanded dynamic on all radio buttons differently</p>
 
               <div class="govuk-radios govuk-radios--conditional">
 
@@ -301,6 +302,8 @@
               </div>
             </fieldset>
           </div>
+
+          <button class="govuk-button govuk-button--secondary">Focusable after fieldset</button>
 
         </form>
 
