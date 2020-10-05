@@ -156,6 +156,262 @@
           </tbody>
         </table>
 
+
+        <h2 class="govuk-heading-m">Test summaries</h2>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <th scope="col" class="govuk-table__header">Action</th>
+            <th scope="col" class="govuk-table__header">
+              Variation A (original)
+              <span class="govuk-!-font-size-16 govuk-!-display-block govuk-!-font-weight-regular">(ARIA on expanding radio buttons only)</span>
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Variation B
+              <span class="govuk-!-font-size-16 govuk-!-display-block govuk-!-font-weight-regular">(ARIA on fieldset only)</span>
+            </th>
+            <th scope="col" class="govuk-table__header">
+              Variation D
+              <span class="govuk-!-font-size-16 govuk-!-display-block govuk-!-font-weight-regular">(ARIA on fieldset and all radio buttons)</span>
+            </th>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="rowgroup" colspan="4">
+                Voiceover, iOS 13.7
+              </th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Expand the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Collapse the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a radio button that expands the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:yellow"><span class="govuk-!-display-inline-block govuk-!-font-size-16" style="padding:0 .5em;">Announces that content can be collapsed by double-tapping</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:yellow"><span class="govuk-!-display-inline-block govuk-!-font-size-16" style="padding:0 .5em;">Announces that content can be collapsed by double-tapping</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a radio button that collapses the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:yellow"><span class="govuk-!-display-inline-block govuk-!-font-size-16" style="padding:0 .5em;">Announces that content can be collapsed by double-tapping</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a fieldset</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+            </tr>
+          </tbody>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="rowgroup" colspan="4">
+                Voiceover, macOS 10.14.6, tabbing
+              </th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Expand the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Collapse the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a radio button that expands the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a radio button that collapses the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a fieldset</span>
+              </td>
+              <td class="govuk-table__cell"><span class="govuk-!-font-size-16">Not applicable</span></td>
+              <td class="govuk-table__cell"><span class="govuk-!-font-size-16">Not applicable</span></td>
+              <td class="govuk-table__cell"><span class="govuk-!-font-size-16">Not applicable</span></td>
+            </tr>
+          </tbody>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="rowgroup" colspan="4">
+                Voiceover, macOS 10.14.6, web rotor
+              </th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Expand the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Collapse the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a radio button that expands the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a radio button that collapses the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a fieldset</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+          </tbody>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="rowgroup" colspan="4">
+                NVDA 2019.3.1, Windows 10, tabbing
+              </th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Expand the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Collapse the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a radio button that expands the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:yellow"><span class="govuk-!-display-inline-block govuk-!-font-size-16" style="padding:0 .5em;">Announces only when tabbing from outside fieldset</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a radio button that collapses the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:yellow"><span class="govuk-!-display-inline-block govuk-!-font-size-16" style="padding:0 .5em;">Announces only when tabbing from outside fieldset</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a fieldset</span>
+              </td>
+              <td class="govuk-table__cell"><span class="govuk-!-font-size-16">Not applicable</span></td>
+              <td class="govuk-table__cell"><span class="govuk-!-font-size-16">Not applicable</span></td>
+              <td class="govuk-table__cell"><span class="govuk-!-font-size-16">Not applicable</span></td>
+            </tr>
+          </tbody>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="rowgroup" colspan="4">
+                NVDA 2019.3.1, Windows 10, web rotor
+              </th>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Expand the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Collapse the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a radio button that expands the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a radio button that collapses the content</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span class="govuk-!-font-size-16">Focus a fieldset</span>
+              </td>
+              <td class="govuk-table__cell" style="background:gray"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Does not announce</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+              <td class="govuk-table__cell" style="background:green"><span class="govuk-!-display-inline-block govuk-!-font-weight-bold" style="color:white; padding:0 .5em;">Announces</span></td>
+            </tr>
+          </tbody>
+        </table>
+
       </div>
     </div>
 
